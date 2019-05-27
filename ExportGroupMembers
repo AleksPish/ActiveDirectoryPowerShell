@@ -1,0 +1,3 @@
+$OUpath = '<place OU path here distinguished name of ou in attribute editor>'
+$ExportPath = '<place where to put output>'
+Get-ADUser -Filter * -SearchBase $OUpath | Select-object DistinguishedName,Name,UserPrincipalName,sAMAccountName | Export-Csv -NoType $ExportPath
